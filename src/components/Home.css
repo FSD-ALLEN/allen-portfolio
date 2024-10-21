@@ -1,0 +1,137 @@
+/* Home.css */
+
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fc; /* Light background */
+  color: #333; /* Text color */
+}
+
+/* Home Section */
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem 9rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-top: 110px;
+  
+}
+
+/* Left Column - Text */
+.home-text {
+  flex: 1;
+  max-width: 500px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Text shadow for subtle depth */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.home-text:hover {
+  transform: translateY(-5px); /* Lift the text slightly on hover */
+}
+
+.home-text h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.home-text p {
+  font-size: 1.2rem;
+  color: #140808;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #1720a7, #4b5dfc); /* Gradient background */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  font-weight: bold; /* Bold text */
+  font-size: 1.1rem; /* Slightly larger text */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Initial shadow */
+  transition: 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background: linear-gradient(135deg, #0e1899, #3648d4); /* Darker gradient on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  transform: translateY(-3px); /* Lift button on hover */
+}
+
+/* Add a glowing border on focus (when the button is clicked or tabbed) */
+.cta-button:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 15px #4b5dfc, 0 0 25px rgba(75, 93, 252, 0.5); /* Glowing effect */
+}
+
+/* Animated Button Hover Effect */
+.cta-button:hover::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 8px;
+  border: 2px solid rgba(75, 93, 252, 0.5); /* Glowing border effect */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Right Column - Image */
+.home-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+}
+
+/* Image styling */
+.home-image img {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #1720a7;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image Hover Effect */
+.home-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .cta-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .home-image img {
+    max-width: 200px;
+    height: 200px;
+  }
+
+  .home-text {
+    margin-bottom: 2rem;
+  }
+}

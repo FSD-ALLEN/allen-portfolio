@@ -1,0 +1,87 @@
+/* Navbar.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.navbar {
+  background-color: #333;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-toggle {
+  display: none; /* Initially hide the toggle button */
+  font-size: 1.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-links a:hover {
+  color: #1720a7;
+}
+
+/* Mobile menu */
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: block; /* Show the toggle button on smaller screens */
+  }
+
+  .nav-links {
+    display: none; /* Hide menu items by default */
+    flex-direction: column; /* Stack links vertically */
+    gap: 1rem;
+    background-color: #333;
+    position: absolute; /* Position them over content */
+    top: 60px; /* Adjust top as per your navbar height */
+    right: 0;
+    width: 200px; /* Width of the mobile menu */
+    padding: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex; /* Show menu when active */
+  }
+}
